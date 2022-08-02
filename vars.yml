@@ -1,0 +1,21 @@
+---
+# Mandatory Variables
+cloud_provider: ec2
+env_type: ocp4-cluster
+software_to_deploy: openshift4
+
+# guid: defaultguid
+
+# OpenShift Installer version to use
+ocp4_installer_version: 4.6.28
+
+# Satellite is used for RHEL repos
+repo_method: satellite
+update_packages: true
+
+# This will result in a default OpenShift 4 installation.
+infra_workloads: []
+
+# Reserve everything in the same AZ (costs saving)
+# Set to false to spread the instances across multiple zones
+agnosticd_aws_capacity_reservation_single_zone: true
