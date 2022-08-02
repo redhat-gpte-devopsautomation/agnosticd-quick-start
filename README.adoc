@@ -27,9 +27,45 @@ source ~/agnosticd-quick-start/k8s/bin/activate
 pip install -r ~/agnosticd-quick-start/requirements.txt
 ----
 
-. Install ansible roles and collections in defaults path.
+. Install ansible roles and collections in default path.
 +
 [source,txt]
 ----
 ansible-galaxy collection install -r ~/agnosticd-quick-start/requirements.yml
+----
+
+== Prepare secrets and variables files
+
+. Edit and update secrets.yml file.
++
+[source,txt]
+----
+vim ~/agnosticd-quick-start/secrets.yml
+----
+
+. Edit and update only if needed.
++
+[source,txt]
+----
+vim ~/agnosticd-quick-start/vars.yml
+----
+
+== Run AgnosticD
+
+. Clone agnosticd git repository.
++
+[source,txt]
+----
+git clone https://github.com/redhat-cop/agnosticd.git
+----
+
+. Run agnosticd config.
++
+[source,txt]
+----
+cd agnosticd/ansible
+ansible-playbook main.yml \
+    -e @~/agnosticd-quick-start/vars.yml \
+    -e @~/agnosticd-quick-start/secrets.yml
+    -e guid=changme
 ----
