@@ -1,2 +1,4 @@
 # agnosticd-quick-start
-This repository contains agnosticd quick start files 
+This repository contains agnosticD quick start files 
+
+Doc: quick-start-guide.adoc
