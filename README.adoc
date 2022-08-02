@@ -2,11 +2,34 @@
 
 == Prepare your workstation
 
-. Run following command to create work directory.
 
+. Clone agnosticd-quick-start repository.
 +
 [source,txt]
 ----
-mkdir ~/quickstart
+cd $HOME
+git clone https://github.com/redhat-gpte-devopsautomation/agnosticd-quick-start.git
 ----
 
+. Create python virtual environment.
++
+[source,txt]
+----
+cd agnosticd-quick-start
+python3 -m venv k8s
+----
+
+. Install python library in the virtual environment.
++
+[source,txt]
+----
+source ~/agnosticd-quick-start/k8s/bin/activate
+pip install -r ~/agnosticd-quick-start/requirements.txt
+----
+
+. Install ansible roles and collections in defaults path.
++
+[source,txt]
+----
+ansible-galaxy collection install -r ~/agnosticd-quick-start/requirements.yml
+----
